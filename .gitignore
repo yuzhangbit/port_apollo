@@ -77,3 +77,6 @@ heuristic_info.txt
 # ignore generated files by protobuf
 *.pb.cc
 *.pb.h
+
+# ignore clion project file
+*.idea
