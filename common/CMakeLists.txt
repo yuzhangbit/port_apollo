@@ -16,7 +16,7 @@ protobuf_generate_cpp(PROTO_SRC PROTO_HEADER
 
 include_directories(
   include
-  ${CMAKE_SOURCE_DIR}
+  "."
   ${catkin_INCLUDE_DIRS}
   ${CMAKE_CURRENT_BINARY_DIR}
   ${PROTOBUF_INCLUDE_DIRS}
