@@ -29,8 +29,8 @@
 #include <string>
 #include <vector>
 
-#include "google/protobuf/stubs/stringprintf.h"
-#include "google/protobuf/stubs/strutil.h"
+#include <google/protobuf/stubs/stringprintf.h>
+#include <google/protobuf/stubs/strutil.h>
 
 /**
  * @namespace apollo::common::util

@@ -14,15 +14,15 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/aabox2d.h"
+#include "aabox2d.h"
 
 #include <algorithm>
 #include <cmath>
 
-#include "modules/common/log.h"
-#include "modules/common/util/string_util.h"
+#include "log.h"
+#include "util/string_util.h"
 
-#include "modules/common/math/math_utils.h"
+#include "math_utils.h"
 
 namespace apollo {
 namespace common {

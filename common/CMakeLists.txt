@@ -9,6 +9,7 @@ set(PKG_DEPS
 
 find_package(catkin REQUIRED COMPONENTS ${PKG_DEPS})
 find_package(Protobuf REQUIRED)
+
 # generate proto files for the library
 protobuf_generate_cpp(PROTO_SRC PROTO_HEADER
   proto/pnc_point.proto
@@ -40,5 +41,8 @@ add_library(common SHARED
 target_link_libraries(common
   ${catkin_LIBRARIES}
   ${PROTOBUF_LIBRARY})
+
+add_subdirectory(math)
+add_subdirectory(util)
 
 

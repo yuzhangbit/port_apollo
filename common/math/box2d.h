@@ -27,9 +27,9 @@
 #include <string>
 #include <vector>
 
-#include "modules/common/math/aabox2d.h"
-#include "modules/common/math/line_segment2d.h"
-#include "modules/common/math/vec2d.h"
+#include "aabox2d.h"
+#include "line_segment2d.h"
+#include "vec2d.h"
 
 /**
  * @namespace apollo::common::math

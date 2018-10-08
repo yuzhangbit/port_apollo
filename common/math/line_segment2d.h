@@ -23,7 +23,7 @@
 #define MODULES_COMMON_MATH_LINE_SEGEMENT2D_H_
 
 #include <string>
-#include "modules/common/math/vec2d.h"
+#include "vec2d.h"
 
 /**
  * @namespace apollo::common::math
