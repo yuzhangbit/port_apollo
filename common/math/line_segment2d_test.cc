@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/line_segment2d.h"
+#include "line_segment2d.h"
 
 #include <cmath>
 

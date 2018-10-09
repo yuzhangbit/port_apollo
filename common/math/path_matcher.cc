@@ -18,14 +18,14 @@
  * @file
  **/
 
-#include "modules/common/math/path_matcher.h"
+#include "path_matcher.h"
 
 #include <algorithm>
 #include <cmath>
 #include <vector>
 
 #include "glog/logging.h"
-#include "modules/common/math/linear_interpolation.h"
+#include "linear_interpolation.h"
 
 namespace apollo {
 namespace common {
