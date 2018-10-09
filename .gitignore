@@ -81,5 +81,3 @@ heuristic_info.txt
 # ignore clion project file
 *.idea
 
-# ignore 
-common/include/common/
