@@ -17,14 +17,15 @@ find_package(Protobuf REQUIRED)
 set(PROTO_DEFNS proto/pnc_point.proto proto/error_code.proto)
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ${PROTO_DEFNS})
 
-include_directories(
+include_directories(include
   "."
+  math
   ${catkin_INCLUDE_DIRS}
   ${PROTOBUF_INCLUDE_DIRS}
 )
 
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS "." include
   LIBRARIES common
   CATKIN_DEPENDS ${PKG_DEPS}
 )
@@ -86,6 +87,12 @@ install(TARGETS ${PROJECT_NAME}
 
 install(DIRECTORY include/${PROJECT_NAME}/ math util
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE
+  )
+
+install(DIRECTORY math util vehicle_state
+  DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}
   FILES_MATCHING PATTERN "*.h"
   PATTERN ".svn" EXCLUDE
   )
