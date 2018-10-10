@@ -1,6 +1,3 @@
-[submodule "cmake_modules_customized"]
-	path = cmake_modules_customized
-	url = https://github.com/yuzhangbit/cmake_modules_customized.git
 [submodule "glog_catkin"]
 	path = glog_catkin
 	url = https://github.com/ethz-asl/glog_catkin.git
