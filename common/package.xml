@@ -3,8 +3,7 @@
     <description>apollo common module</description>
     <maintainer email="yu.zhang.bit@gmail.com">Yu Zhang</maintainer>
     <license>Apache 2.0</license>
-    <version>0.0.1</version>
+    <version>3.0.0</version>
     <buildtool_depend>catkin</buildtool_depend>
     <depend>glog_catkin</depend>
-    <depend>cmake_modules_customized</depend>
 </package>
