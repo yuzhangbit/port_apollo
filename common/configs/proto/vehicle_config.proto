@@ -2,8 +2,8 @@ syntax = "proto2";
 
 package apollo.common;
 
-import "modules/common/proto/header.proto";
-import "modules/common/proto/geometry.proto";
+import "proto/header.proto";
+import "proto/geometry.proto";
 
 message Transform {
   optional bytes source_frame = 1;  // Also known as "frame_id."

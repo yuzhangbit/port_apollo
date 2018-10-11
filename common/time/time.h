@@ -32,7 +32,7 @@
 #include "configs/config_gflags.h"
 #include "log.h"
 #include "macro.h"
-#include "ros/include/ros/ros.h"
+#include "ros/ros.h"
 
 /**
  * @namespace apollo::common::time

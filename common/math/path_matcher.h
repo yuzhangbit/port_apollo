@@ -24,7 +24,7 @@
 #include <utility>
 #include <vector>
 
-//#include "proto/pnc_point.pb.h"
+#include "proto/pnc_point.pb.h"
 
 namespace apollo {
 namespace common {
