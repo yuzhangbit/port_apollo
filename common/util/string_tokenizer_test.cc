@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "modules/common/util/string_tokenizer.h"
+#include "util/string_tokenizer.h"
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"

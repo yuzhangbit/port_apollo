@@ -14,10 +14,10 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/adapters/adapter_manager.h"
+#include "adapters/adapter_manager.h"
 
-#include "modules/common/adapters/adapter_gflags.h"
-#include "modules/common/util/util.h"
+#include "adapters/adapter_gflags.h"
+#include "util/util.h"
 
 namespace apollo {
 namespace common {

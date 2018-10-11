@@ -14,12 +14,12 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/file.h"
+#include "util/file.h"
 
 #include "boost/filesystem.hpp"
 #include "gtest/gtest.h"
-#include "modules/common/log.h"
-#include "modules/common/util/testdata/simple.pb.h"
+#include "log.h"
+#include "util/testdata/simple.pb.h"
 
 namespace apollo {
 namespace common {
@@ -101,7 +101,7 @@ TEST_F(FileTest, RemoveAllFiles) {
 }
 
 TEST_F(FileTest, ListSubPaths) {
-  // Expect {'modules/common/util/testdata'}
+  // Expect {'util/testdata'}
   const auto root_subdirs = ListSubPaths("/");
 
   // Some common root subdirs should exist.

@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/filters/digital_filter_coefficients.h"
+#include "filters/digital_filter_coefficients.h"
 
 #include <cmath>
 #include <vector>

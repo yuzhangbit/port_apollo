@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/kalman_filter.h"
+#include "math/kalman_filter.h"
 
 #include "gtest/gtest.h"
 

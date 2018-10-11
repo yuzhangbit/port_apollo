@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/apollo_app.h"
+#include "apollo_app.h"
 
 #include <csignal>
 #include <memory>
@@ -22,9 +22,9 @@
 #include <vector>
 
 #include "gflags/gflags.h"
-#include "modules/common/log.h"
-#include "modules/common/status/status.h"
-#include "modules/common/util/string_util.h"
+#include "log.h"
+#include "status/status.h"
+#include "util/string_util.h"
 
 #include "ros/include/ros/ros.h"
 

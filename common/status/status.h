@@ -24,7 +24,7 @@
 #include <string>
 
 #include "google/protobuf/descriptor.h"
-#include "modules/common/proto/error_code.pb.h"
+#include "proto/error_code.pb.h"
 
 /**
  * @namespace apollo::common

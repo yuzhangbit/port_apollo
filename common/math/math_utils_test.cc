@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/math_utils.h"
+#include "math/math_utils.h"
 
 #include "gtest/gtest.h"
 

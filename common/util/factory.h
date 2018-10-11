@@ -26,8 +26,8 @@
 #include <memory>
 #include <utility>
 
-#include "modules/common/log.h"
-#include "modules/common/macro.h"
+#include "log.h"
+#include "macro.h"
 
 /**
  * @namespace apollo::common::util

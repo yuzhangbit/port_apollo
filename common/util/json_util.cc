@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/json_util.h"
+#include "util/json_util.h"
 
 #include "google/protobuf/util/json_util.h"
 

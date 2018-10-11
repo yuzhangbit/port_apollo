@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "modules/common/monitor_log/monitor_logger.h"
+#include "monitor_log/monitor_logger.h"
 
-#include "modules/common/adapters/adapter_manager.h"
+#include "adapters/adapter_manager.h"
 
 namespace apollo {
 namespace common {

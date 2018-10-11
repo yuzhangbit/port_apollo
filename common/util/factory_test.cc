@@ -15,7 +15,7 @@
  *****************************************************************************/
 #include <string>
 #include "gtest/gtest.h"
-#include "modules/common/util/factory.h"
+#include "util/factory.h"
 
 namespace apollo {
 namespace common {

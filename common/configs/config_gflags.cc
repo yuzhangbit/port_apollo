@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/configs/config_gflags.h"
+#include "configs/config_gflags.h"
 
 DEFINE_string(map_dir, "modules/map/data/demo",
               "Directory which contains a group of related maps.");
@@ -34,7 +34,7 @@ DEFINE_string(end_way_point_filename, "default_end_way_point.txt",
 DEFINE_string(speed_control_filename, "speed_control.pb.txt",
               "The speed control region in a map.");
 
-DEFINE_string(vehicle_config_path, "modules/common/data/mkz_config.pb.txt",
+DEFINE_string(vehicle_config_path, "data/mkz_config.pb.txt",
               "the file path of vehicle config file");
 
 DEFINE_bool(use_ros_time, false,

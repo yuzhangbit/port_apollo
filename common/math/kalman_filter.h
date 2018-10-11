@@ -27,8 +27,8 @@
 
 #include "Eigen/Dense"
 
-#include "modules/common/log.h"
-#include "modules/common/math/matrix_operations.h"
+#include "log.h"
+#include "math/matrix_operations.h"
 
 /**
  * @namespace apollo::common::math

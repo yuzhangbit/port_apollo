@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/qp_solver/qp_solver_gflags.h"
+#include "math/qp_solver/qp_solver_gflags.h"
 
 // math : active set solver
 DEFINE_double(default_active_set_eps_num, -1e-7,

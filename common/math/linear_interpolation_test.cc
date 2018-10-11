@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "modules/common/math/linear_interpolation.h"
+#include "math/linear_interpolation.h"
 
 #include "Eigen/Dense"
 #include "gtest/gtest.h"

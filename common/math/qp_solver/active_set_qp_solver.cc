@@ -17,14 +17,14 @@
 /**
  * @file: active_set_qp_solver.cc
  **/
-#include "modules/common/math/qp_solver/active_set_qp_solver.h"
+#include "math/qp_solver/active_set_qp_solver.h"
 
 #include <algorithm>
 #include <climits>
 #include <vector>
 
-#include "modules/common/log.h"
-#include "modules/common/math/qp_solver/qp_solver_gflags.h"
+#include "log.h"
+#include "math/qp_solver/qp_solver_gflags.h"
 
 namespace apollo {
 namespace common {

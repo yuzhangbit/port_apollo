@@ -14,14 +14,14 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/aaboxkdtree2d.h"
+#include "math/aaboxkdtree2d.h"
 
 #include <string>
 
 #include "gtest/gtest.h"
 
-#include "modules/common/math/line_segment2d.h"
-#include "modules/common/math/math_utils.h"
+#include "math/line_segment2d.h"
+#include "math/math_utils.h"
 
 namespace apollo {
 namespace common {

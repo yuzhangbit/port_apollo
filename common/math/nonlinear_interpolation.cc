@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "modules/common/math/nonlinear_interpolation.h"
+#include "math/nonlinear_interpolation.h"
 
 #include <cmath>
 
-#include "modules/common/log.h"
-#include "modules/common/math/hermite_spline.h"
-#include "modules/common/math/integral.h"
-#include "modules/common/math/math_utils.h"
+#include "log.h"
+#include "math/hermite_spline.h"
+#include "math/integral.h"
+#include "math/math_utils.h"
 
 namespace apollo {
 namespace common {

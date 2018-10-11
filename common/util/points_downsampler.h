@@ -24,8 +24,8 @@
 #include <cmath>
 #include <vector>
 
-#include "modules/common/log.h"
-#include "modules/common/math/vec2d.h"
+#include "log.h"
+#include "math/vec2d.h"
 
 /**
  * @namespace apollo::common::util

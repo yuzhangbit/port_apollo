@@ -14,11 +14,11 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/filters/mean_filter.h"
+#include "filters/mean_filter.h"
 
 #include <limits>
 
-#include "modules/common/log.h"
+#include "log.h"
 
 namespace apollo {
 namespace common {

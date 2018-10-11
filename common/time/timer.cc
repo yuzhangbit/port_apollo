@@ -14,10 +14,10 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/time/timer.h"
+#include "time/timer.h"
 
-#include "modules/common/log.h"
-#include "modules/common/time/time.h"
+#include "log.h"
+#include "time/time.h"
 
 namespace apollo {
 namespace common {

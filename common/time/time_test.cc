@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/time/time.h"
+#include "time/time.h"
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"

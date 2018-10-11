@@ -14,15 +14,15 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/http_client.h"
+#include "util/http_client.h"
 
 #include <curlpp/Easy.hpp>
 #include <curlpp/Exception.hpp>
 #include <curlpp/Options.hpp>
 #include <curlpp/cURLpp.hpp>
 
-#include "modules/common/log.h"
-#include "modules/common/util/string_util.h"
+#include "log.h"
+#include "util/string_util.h"
 
 namespace apollo {
 namespace common {

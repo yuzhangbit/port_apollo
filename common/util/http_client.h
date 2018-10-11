@@ -19,7 +19,7 @@
 
 #include <string>
 
-#include "modules/common/status/status.h"
+#include "status/status.h"
 #include "third_party/json/json.hpp"
 
 namespace apollo {

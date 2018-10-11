@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/threadpool.h"
+#include "util/threadpool.h"
 
 #include <algorithm>
 #include <atomic>

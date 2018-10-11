@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/string_tokenizer.h"
+#include "util/string_tokenizer.h"
 
 namespace apollo {
 namespace common {

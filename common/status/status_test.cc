@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/status/status.h"
+#include "status/status.h"
 
 #include "gtest/gtest.h"
 

@@ -25,8 +25,8 @@
 #include <string>
 
 #include "gflags/gflags.h"
-#include "modules/common/log.h"
-#include "modules/common/status/status.h"
+#include "log.h"
+#include "status/status.h"
 
 #include "ros/include/ros/ros.h"
 

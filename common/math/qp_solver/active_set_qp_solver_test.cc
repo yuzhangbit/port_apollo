@@ -17,7 +17,7 @@
 /**
  * @file
  **/
-#include "modules/common/math/qp_solver/active_set_qp_solver.h"
+#include "math/qp_solver/active_set_qp_solver.h"
 
 #include "glog/logging.h"
 #include "gtest/gtest.h"

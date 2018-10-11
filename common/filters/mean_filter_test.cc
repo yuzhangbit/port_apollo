@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/filters/mean_filter.h"
+#include "filters/mean_filter.h"
 
 #include "gtest/gtest.h"
 

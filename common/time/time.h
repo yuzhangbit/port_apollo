@@ -29,9 +29,9 @@
 #include <stdexcept>
 #include <type_traits>
 
-#include "modules/common/configs/config_gflags.h"
-#include "modules/common/log.h"
-#include "modules/common/macro.h"
+#include "configs/config_gflags.h"
+#include "log.h"
+#include "macro.h"
 #include "ros/include/ros/ros.h"
 
 /**

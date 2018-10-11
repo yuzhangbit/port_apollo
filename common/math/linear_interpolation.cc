@@ -14,12 +14,12 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/linear_interpolation.h"
+#include "math/linear_interpolation.h"
 
 #include <cmath>
 
-#include "modules/common/log.h"
-#include "modules/common/math/math_utils.h"
+#include "log.h"
+#include "math/math_utils.h"
 
 namespace apollo {
 namespace common {

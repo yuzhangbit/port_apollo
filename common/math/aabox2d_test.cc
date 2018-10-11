@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/aabox2d.h"
+#include "math/aabox2d.h"
 
 #include <string>
 

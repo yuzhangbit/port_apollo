@@ -24,7 +24,7 @@
 
 #include <qpOASES.hpp>
 
-#include "modules/common/math/qp_solver/qp_solver.h"
+#include "math/qp_solver/qp_solver.h"
 
 namespace apollo {
 namespace common {

@@ -27,12 +27,12 @@
 #include <type_traits>
 #include <vector>
 
-#include "modules/common/adapters/adapter.h"
-#include "modules/common/adapters/message_adapters.h"
-#include "modules/common/adapters/proto/adapter_config.pb.h"
-#include "modules/common/log.h"
-#include "modules/common/macro.h"
-#include "modules/common/transform_listener/transform_listener.h"
+#include "adapters/adapter.h"
+#include "adapters/message_adapters.h"
+#include "adapters/proto/adapter_config.pb.h"
+#include "log.h"
+#include "macro.h"
+#include "transform_listener/transform_listener.h"
 
 #include "ros/include/ros/ros.h"
 

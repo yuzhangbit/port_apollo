@@ -12,14 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "modules/common/math/mpc_solver.h"
+#include "math/mpc_solver.h"
 
 #include <algorithm>
 #include <memory>
 
-#include "modules/common/log.h"
-#include "modules/common/math/qp_solver/active_set_qp_solver.h"
-#include "modules/common/math/qp_solver/qp_solver.h"
+#include "log.h"
+#include "math/qp_solver/active_set_qp_solver.h"
+#include "math/qp_solver/qp_solver.h"
 
 namespace apollo {
 namespace common {

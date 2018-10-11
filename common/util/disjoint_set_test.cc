@@ -14,10 +14,10 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/disjoint_set.h"
+#include "util/disjoint_set.h"
 
 #include "gtest/gtest.h"
-#include "modules/common/log.h"
+#include "log.h"
 
 namespace apollo {
 namespace common {

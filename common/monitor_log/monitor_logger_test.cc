@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "modules/common/monitor_log/monitor_logger.h"
+#include "monitor_log/monitor_logger.h"
 
 #include <string>
 #include <vector>

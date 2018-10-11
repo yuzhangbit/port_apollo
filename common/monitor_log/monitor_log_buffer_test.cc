@@ -14,11 +14,11 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/monitor_log/monitor_log_buffer.h"
+#include "monitor_log/monitor_log_buffer.h"
 
 #include "gtest/gtest.h"
 
-#include "modules/common/log.h"
+#include "log.h"
 
 namespace apollo {
 namespace common {

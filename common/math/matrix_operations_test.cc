@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/matrix_operations.h"
+#include "math/matrix_operations.h"
 
 #include "gtest/gtest.h"
 

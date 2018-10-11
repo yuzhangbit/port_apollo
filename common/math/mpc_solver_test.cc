@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/mpc_solver.h"
+#include "math/mpc_solver.h"
 
 #include "gtest/gtest.h"
 

@@ -14,17 +14,17 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/vehicle_state/vehicle_state_provider.h"
+#include "vehicle_state/vehicle_state_provider.h"
 
 #include <cmath>
 
 #include "Eigen/Core"
 
-#include "modules/common/configs/config_gflags.h"
-#include "modules/common/log.h"
-#include "modules/common/math/euler_angles_zxy.h"
-#include "modules/common/math/quaternion.h"
-#include "modules/common/util/string_util.h"
+#include "configs/config_gflags.h"
+#include "log.h"
+#include "math/euler_angles_zxy.h"
+#include "math/quaternion.h"
+#include "util/string_util.h"
 #include "modules/localization/common/localization_gflags.h"
 
 namespace apollo {

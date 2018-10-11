@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/file.h"
+#include "util/file.h"
 
 #include <errno.h>
 #include <limits.h>
@@ -23,7 +23,7 @@
 
 #include "boost/filesystem.hpp"
 
-#include "modules/common/util/string_util.h"
+#include "util/string_util.h"
 
 namespace apollo {
 namespace common {

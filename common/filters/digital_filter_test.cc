@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/filters/digital_filter.h"
+#include "filters/digital_filter.h"
 
 #include <vector>
 

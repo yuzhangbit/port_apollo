@@ -28,8 +28,8 @@
 #include <vector>
 
 #include "gtest/gtest_prod.h"
-#include "modules/common/monitor_log/monitor_logger.h"
-#include "modules/common/monitor_log/proto/monitor_log.pb.h"
+#include "monitor_log/monitor_logger.h"
+#include "monitor_log/proto/monitor_log.pb.h"
 
 /**
  * @namespace apollo::common::monitor
@@ -93,7 +93,7 @@ class MonitorLogBuffer {
 
   /**
    * @brief Add monitor message with MonitorMessageItem::LogLevel
-   * @param log_level defined in modules/common/monitor/proto/monitor.proto
+   * @param log_level defined in monitor/proto/monitor.proto
    * @param msg the string to send to monitor
    */
   void AddMonitorMsgItem(const MonitorMessageItem::LogLevel log_level,

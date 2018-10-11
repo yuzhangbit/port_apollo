@@ -14,12 +14,12 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/transform_listener/transform_listener.h"
+#include "transform_listener/transform_listener.h"
 
 #include <functional>
 
-#include "modules/common/log.h"
-#include "modules/common/time/time.h"
+#include "log.h"
+#include "time/time.h"
 
 namespace apollo {
 namespace common {

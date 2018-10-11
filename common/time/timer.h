@@ -21,7 +21,7 @@
 #include <chrono>
 #include <string>
 
-#include "modules/common/macro.h"
+#include "macro.h"
 
 namespace apollo {
 namespace common {

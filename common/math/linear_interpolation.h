@@ -24,8 +24,8 @@
 
 #include <cmath>
 
-#include "modules/common/log.h"
-#include "modules/common/proto/pnc_point.pb.h"
+#include "log.h"
+#include "proto/pnc_point.pb.h"
 
 /**
  * @namespace apollo::common::math

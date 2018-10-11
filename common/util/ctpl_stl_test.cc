@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/util/ctpl_stl.h"
+#include "util/ctpl_stl.h"
 
 #include <algorithm>
 #include <atomic>

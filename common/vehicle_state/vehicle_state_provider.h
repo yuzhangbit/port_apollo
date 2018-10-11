@@ -25,13 +25,13 @@
 #include <string>
 
 #include "modules/canbus/proto/chassis.pb.h"
-#include "modules/common/vehicle_state/proto/vehicle_state.pb.h"
+#include "vehicle_state/proto/vehicle_state.pb.h"
 #include "modules/localization/proto/localization.pb.h"
 
-#include "modules/common/macro.h"
-#include "modules/common/math/box2d.h"
-#include "modules/common/math/vec2d.h"
-#include "modules/common/status/status.h"
+#include "macro.h"
+#include "math/box2d.h"
+#include "math/vec2d.h"
+#include "status/status.h"
 
 /**
  * @namespace apollo::common

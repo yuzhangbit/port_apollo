@@ -26,7 +26,7 @@
 #include <utility>
 #include <vector>
 
-#include "modules/common/monitor_log/proto/monitor_log.pb.h"
+#include "monitor_log/proto/monitor_log.pb.h"
 
 /**
  * @namespace apollo::common::monitor

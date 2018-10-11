@@ -22,7 +22,7 @@
 #ifndef MODULES_COMMON_MATH_NONLINEAR_INTERPOLATION_H_
 #define MODULES_COMMON_MATH_NONLINEAR_INTERPOLATION_H_
 
-#include "modules/common/proto/pnc_point.pb.h"
+#include "proto/pnc_point.pb.h"
 
 /**
  * @namespace apollo::common::math

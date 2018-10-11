@@ -14,11 +14,11 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/filters/digital_filter.h"
+#include "filters/digital_filter.h"
 
 #include <cmath>
 
-#include "modules/common/log.h"
+#include "log.h"
 
 namespace {
 

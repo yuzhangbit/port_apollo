@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "modules/common/kv_db/kv_db.h"
+#include "kv_db/kv_db.h"
 
 #include <leveldb/env.h>
 #include <leveldb/options.h>
 
 #include "gflags/gflags.h"
-#include "modules/common/util/file.h"
-#include "modules/common/util/util.h"
+#include "util/file.h"
+#include "util/util.h"
 
 DEFINE_string(kv_db_path, "/apollo/data/kv_db", "Path to param DB file.");
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/adapters/adapter_gflags.h"
+#include "adapters/adapter_gflags.h"
 
 DEFINE_bool(enable_adapter_dump, false,
             "Whether enable dumping the messages to "

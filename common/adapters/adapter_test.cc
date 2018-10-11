@@ -14,13 +14,13 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/adapters/adapter.h"
+#include "adapters/adapter.h"
 
 #include <cmath>
 #include <string>
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "modules/common/adapters/adapter_gflags.h"
+#include "adapters/adapter_gflags.h"
 #include "modules/localization/proto/localization.pb.h"
 
 namespace apollo {

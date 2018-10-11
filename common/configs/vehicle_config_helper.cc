@@ -14,13 +14,13 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/configs/vehicle_config_helper.h"
+#include "configs/vehicle_config_helper.h"
 
 #include <algorithm>
 #include <cmath>
 
-#include "modules/common/configs/config_gflags.h"
-#include "modules/common/util/file.h"
+#include "configs/config_gflags.h"
+#include "util/file.h"
 
 namespace apollo {
 namespace common {

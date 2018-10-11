@@ -18,8 +18,8 @@
 
 #include "Eigen/Dense"
 
-#include "modules/common/log.h"
-#include "modules/common/math/linear_quadratic_regulator.h"
+#include "log.h"
+#include "math/linear_quadratic_regulator.h"
 
 namespace apollo {
 namespace common {

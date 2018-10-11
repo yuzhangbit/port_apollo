@@ -20,7 +20,7 @@
 #include <sys/time.h>
 #include <iomanip>
 
-#include "modules/common/macro.h"
+#include "macro.h"
 
 namespace apollo {
 namespace common {

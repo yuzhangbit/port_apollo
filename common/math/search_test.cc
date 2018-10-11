@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/search.h"
+#include "math/search.h"
 
 #include <cmath>
 

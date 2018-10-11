@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/vehicle_state/vehicle_state_provider.h"
+#include "vehicle_state/vehicle_state_provider.h"
 
 #include <string>
 
@@ -22,7 +22,7 @@
 #include "gtest/gtest.h"
 
 #include "modules/canbus/proto/chassis.pb.h"
-#include "modules/common/util/file.h"
+#include "util/file.h"
 #include "modules/localization/common/localization_gflags.h"
 #include "modules/localization/proto/localization.pb.h"
 

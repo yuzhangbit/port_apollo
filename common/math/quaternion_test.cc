@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/common/math/quaternion.h"
+#include "math/quaternion.h"
 
 #include <cmath>
 
