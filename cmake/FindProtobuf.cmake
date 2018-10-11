@@ -127,59 +127,61 @@ function(PROTOBUF_GENERATE_CPP SRCS HDRS)
   # create project folder devel/include/project_name/proto
   # Folder where the generated headers are installed to. This should resolve to
   # devel/include/project_name/proto
-  set(PROTO_GENERATED_HEADERS_INSTALL_DIR
-    "${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/${PROJECT_NAME}/proto") # devel/include/project_name/proto
-  file(MAKE_DIRECTORY ${PROTO_GENERATED_HEADERS_INSTALL_DIR})
-  set(PROTO_INSALL_SPACE_DIR
-    "${CATKIN_GLOBAL_INCLUDE_DESTINATION}/${PROJECT_NAME}/proto"
-  )
-  file(MAKE_DIRECTORY ${PROTO_INSALL_SPACE_DIR})
 
-  # Folder where the pb.cc and pb.h are generated
-  # create the `build/common/proto` for generated files
-  set(GENERATED_DIR "${CMAKE_CURRENT_BINARY_DIR}/proto")
-  file(MAKE_DIRECTORY ${GENERATED_DIR})
+  list(APPEND _protobuf_include_path -I ${CMAKE_CURRENT_SOURCE_DIR})
 
+  # build/project_name/generated_proto/project_name
+  set(COMPLIED_PROJ_DIR ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME})
+  file(MAKE_DIRECTORY ${COMPLIED_PROJ_DIR})
+  message(STATUS "COMPLIED_PROJ_NAME:" ${COMPLIED_PROJ_NAME})
+  # devel/include/project_name/
+  set(COMPILED_DEVEL_PROJ_DIR ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/${PROJECT_NAME})
+  file(MAKE_DIRECTORY ${COMPILED_DEVEL_PROJ_DIR})
+  message(STATUS "COMPILED_DEVEL_PROJ_DIR:" ${COMPILED_DEVEL_PROJ_DIR})
+  # devel/include/project_name/
   set(${SRCS})
   set(${HDRS})
   _find_protobuf_compiler()
   foreach(FIL ${ARGN})
     get_filename_component(ABS_FIL ${FIL} ABSOLUTE)
     get_filename_component(FIL_WE ${FIL} NAME_WE)
+    get_filename_component(RELT_DIR ${FIL} DIRECTORY)
+    # generated the same directory structure for proto files
+    set(GENERATED_DIR "${COMPLIED_PROJ_DIR}/${RELT_DIR}")
+    file(MAKE_DIRECTORY ${GENERATED_DIR})
+    message(STATUS "GENERATED_DIR:" ${GENERATED_DIR})
+
+    set(DEVEL_GENERATED_DIR ${COMPILED_DEVEL_PROJ_DIR}/${RELT_DIR})
+    file(MAKE_DIRECTORY ${DEVEL_GENERATED_DIR})
+    message(STATUS "DEVEL_GENERATED_DIR:" ${DEVEL_GENERATED_DIR})
 
     set(GENERATED_SRC "${GENERATED_DIR}/${FIL_WE}.pb.cc")
     set(GENERATED_HDR "${GENERATED_DIR}/${FIL_WE}.pb.h")
-
+    message(STATUS "GENERATED_SRC:" ${GENERATED_SRC})
+    message(STATUS "GENERATED_HDR:" ${GENERATED_HDR})
 
     list(APPEND ${SRCS} "${GENERATED_SRC}")
     list(APPEND ${HDRS} "${GENERATED_HDR}")
     add_custom_command(
-      OUTPUT  "${GENERATED_SRC}"
-              "${GENERATED_HDR}"
-              #"${CATKIN_DEVEL_PREFIX}/include/${PROJECT_NAME}/proto/${FIL_WE}.pb.h"
-      COMMAND  "${PROTOBUF_COMPILER}"
+      OUTPUT "${GENERATED_HDR}"
+             "${GENERATED_SRC}"
+      COMMAND "${PROTOBUF_COMPILER}"
       ARGS --cpp_out=${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
-      #COMMAND ${CMAKE_COMMAND} -E copy
-      #        "${GENERATED_HDR}" #install/include/project_name/proto/*.pb.h
-      #        "${PROTO_GENERATED_HEADERS_INSTALL_DIR}/${FIL_WE}.pb.h" # devel/include/project_name/proto/*.pb.h
+      COMMAND ${CMAKE_COMMAND} -E copy
+              "${GENERATED_HDR}"
+              "${DEVEL_GENERATED_DIR}/${FIL_WE}.pb.h"
       DEPENDS ${ABS_FIL} ${PROTOBUF_COMPILER}
       COMMENT "Running C++ protocol buffer compiler on ${FIL}"
     VERBATIM )
-      # devel space
-      install(
-        FILES ${GENERATED_DIR}/${FIL_WE}.pb.h
-        DESTINATION ${PROTO_GENERATED_HEADERS_INSTALL_DIR})
-      # install space
-      install(
-        FILES ${GENERATED_DIR}/${FIL_WE}.pb.h
-        DESTINATION ${PROTO_INSALL_SPACE_DIR})
   endforeach()
-
   set_source_files_properties(${${SRCS}} ${${HDRS}} PROPERTIES GENERATED TRUE)
   set(${SRCS} ${${SRCS}} PARENT_SCOPE)
   set(${HDRS} ${${HDRS}} PARENT_SCOPE)
-
-
+  install(DIRECTORY ${COMPLIED_PROJ_DIR}
+          DESTINATION ${CATKIN_DEVEL_PREFIX}/include/
+          FILES_MATCHING PATTERN "*.h"
+          PATTERN ".svn" EXCLUDE
+  )
 endfunction()
 
 

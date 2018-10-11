@@ -26,15 +26,14 @@ set(PROTOS
   proto/error_code.proto
   proto/geometry.proto
   proto/drive_state.proto
-  #proto/vehicle_signal.proto
+  proto/vehicle_signal.proto
   #configs/proto/vehicle_config.proto
+  #vehicle_state/proto/vehicle_state.proto
   )
 
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ${PROTOS})
 
-include_directories(include
-  "."
-  ${CMAKE_CURRENT_BINARY_DIR}
+include_directories(
   ${catkin_INCLUDE_DIRS}
   ${PROTOBUF_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
@@ -42,7 +41,7 @@ include_directories(include
 
 catkin_package(
   ## export these folders to other catkin packages
-  INCLUDE_DIRS ${CATKIN_DEVEL_PREFIX}/include include
+  INCLUDE_DIRS ${CATKIN_DEVEL_PREFIX}/include
   LIBRARIES common
   CATKIN_DEPENDS ${PKG_DEPS}
 )
@@ -63,6 +62,7 @@ set(MATH_SRCS
   math/integral.cc
   math/linear_quadratic_regulator.cc
   math/hermite_spline.h
+  math/quaternion.h
   ## geometry
   math/aabox2d.cc
   math/box2d.cc
@@ -75,7 +75,10 @@ set(MATH_SRCS
   math/matrix_operations.cc
   math/nonlinear_interpolation.cc
   ## frenet
-  math/cartesian_frenet_conversion.cc)
+  math/cartesian_frenet_conversion.cc
+  ## filter
+  math/kalman_filter.h
+  math/extended_kalman_filter.h)
 
 set(SOURCES
   ${MATH_SRCS}
@@ -83,10 +86,18 @@ set(SOURCES
   #${TIME_SRCS}
   )
 
-add_library(${PROJECT_NAME} SHARED
+add_library(${PROJECT_NAME}
   ${SOURCES}
   ${PROTO_HDRS}
   ${PROTO_SRCS})
+
+target_include_directories(${PROJECT_NAME}
+  PUBLIC
+    $<BUILD_INTERFACE:${CATKIN_DEVEL_PREFIX}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}>
+  )
 
 
 target_link_libraries(${PROJECT_NAME}
@@ -116,6 +127,14 @@ if (CATKIN_ENABLE_TESTING)
     math/linear_interpolation_test.cc
     math/matrix_operations_test.cc)
 
+  target_include_directories(${PROJECT_NAME}_tests
+    PUBLIC
+      $<BUILD_INTERFACE:${CATKIN_DEVEL_PREFIX}/include${PROJECT_NAME}>
+      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    PRIVATE
+      $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}>
+    )
+
   target_link_libraries(${PROJECT_NAME}_tests
     ${catkin_LIBRARIES}
     common)
@@ -127,18 +146,8 @@ endif (CATKIN_ENABLE_TESTING)
 #############
 ## don't miss any subfolders of the root, or you can't include the headers
 ## from other ros packages
-set(DIRS math util time vehicle_state data configs adapters status transform_listener monitor_log kv_db filters)
+set(DIRS proto math util time vehicle_state data configs adapters status transform_listener monitor_log kv_db filters)
 
-# install all the headers to the install space, mirror the structure
-install(DIRECTORY ${DIRS}
-        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-        FILES_MATCHING PATTERN "*.h"
-        PATTERN ".svn" EXCLUDE
-)
-
-install(FILES log.h macro.h
-        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-)
 
 # install all the headers to devel space since we export ${CATKIN_DEVEL_PREFIX}/include/
 # to catkin package instead of the include folder in the root
@@ -149,4 +158,24 @@ install(DIRECTORY ${DIRS}
 )
 install(FILES log.h macro.h
         DESTINATION ${CATKIN_DEVEL_PREFIX}/include/${PROJECT_NAME}
+)
+
+
+# install all the headers to the install space, mirror the structure
+# install the generated headers
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}
+        DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
+        FILES_MATCHING PATTERN "*.h"
+        PATTERN ".svn" EXCLUDE
+)
+
+# install all the headers
+install(DIRECTORY ${DIRS}
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+        FILES_MATCHING PATTERN "*.h"
+        PATTERN ".svn" EXCLUDE
+)
+# install header in the root
+install(FILES log.h macro.h
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )

@@ -23,7 +23,7 @@
 
 #include <string>
 
-#include "configs/proto/vehicle_config.pb.h"
+#include "vehicle_config.pb.h"
 #include "macro.h"
 
 /**
