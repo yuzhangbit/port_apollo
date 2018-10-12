@@ -27,7 +27,7 @@ set(PROTOS
   proto/geometry.proto
   proto/drive_state.proto
   proto/vehicle_signal.proto
-  #configs/proto/vehicle_config.proto
+  configs/proto/vehicle_config.proto
   #vehicle_state/proto/vehicle_state.proto
   )
 
@@ -82,7 +82,7 @@ set(MATH_SRCS
 
 set(SOURCES
   ${MATH_SRCS}
-  #${CONFIGS_SRCS}
+  ${CONFIGS_SRCS}
   #${TIME_SRCS}
   )
 
@@ -108,6 +108,9 @@ target_link_libraries(${PROJECT_NAME}
 if (CATKIN_ENABLE_TESTING)
   catkin_add_gtest(${PROJECT_NAME}_tests
     common_tests.cpp
+    # config
+    configs/vehicle_config_helper_test.cc
+    # math related tests
     math/vec2d_test.cc
     math/math_utils_test.cc
     math/integral_test.cc

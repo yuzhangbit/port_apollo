@@ -129,7 +129,6 @@ function(PROTOBUF_GENERATE_CPP SRCS HDRS)
   # devel/include/project_name/proto
 
   list(APPEND _protobuf_include_path -I ${CMAKE_CURRENT_SOURCE_DIR})
-  list(APPEND _protobuf_include_path -I ${CMAKE_CURRENT_SOURCE_DIR}/configs/proto)
 
 
   # build/project_name/generated_proto/project_name
@@ -176,7 +175,7 @@ function(PROTOBUF_GENERATE_CPP SRCS HDRS)
     #  COMMENT "Running C++ protocol buffer compiler on ${FIL}"
     # VERBATIM )
     execute_process(
-      COMMAND ${PROTOBUF_COMPILER} --cpp_out=${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
+      COMMAND ${PROTOBUF_COMPILER} --cpp_out=${COMPLIED_PROJ_DIR} ${_protobuf_include_path} ${ABS_FIL}
     )
     execute_process(
       # fix the bug of calling protoc from cmake, will mess with the cc file, fix it with
