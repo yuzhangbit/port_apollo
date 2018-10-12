@@ -6,7 +6,7 @@ UBUNTU_CODENAME=$(lsb_release -sc)
 main()
 {
   install_sultan
-  ./${CURRENT_DIR}/install_protobuf.sh
+  .${CURRENT_DIR}/install_protobuf.sh
 }
 
 install_pkgs()
