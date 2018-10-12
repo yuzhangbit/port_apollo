@@ -1,0 +1,3 @@
+[submodule "glog_catkin"]
+	path = glog_catkin
+	url = https://github.com/ethz-asl/glog_catkin.git
