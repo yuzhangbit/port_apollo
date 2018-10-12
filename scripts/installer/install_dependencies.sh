@@ -18,7 +18,7 @@ install_sultan()
 {
   echo "Installing sultan ........"
   sudo pip install --upgrade sultan
-  echo　"Sultan installed."
+  echo "Sultan installed."
 }
 
 
