@@ -36,8 +36,8 @@ before_install:
 ## It is optional and used only for diagnostic purposes.
 
 install:
-  - docker exec -t xenial bash -c "apt-get update;
-    apt-get install sudo python-pip;
+  - docker exec -t xenial bash -c "apt-get -y update;
+    apt-get -y install sudo python-pip;
     cd $HOME/port_apollo/scripts/installer && ./install_dependencies.sh"
 
 ## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
