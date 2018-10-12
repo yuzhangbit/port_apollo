@@ -6,7 +6,7 @@ UBUNTU_CODENAME=$(lsb_release -sc)
 main()
 {
   install_sultan
-  bash ${CURRENT_DIR}/install_protobuf.sh
+  ./${CURRENT_DIR}/install_protobuf.sh
 }
 
 install_pkgs()
@@ -18,7 +18,7 @@ install_sultan()
 {
   echo "Installing sultan ........"
   sudo pip install --upgrade sultan
-  echo　"Sultan installed. "
+  echo　"Sultan installed."
 }
 
 
