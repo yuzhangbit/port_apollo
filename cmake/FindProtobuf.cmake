@@ -129,6 +129,8 @@ function(PROTOBUF_GENERATE_CPP SRCS HDRS)
   # devel/include/project_name/proto
 
   list(APPEND _protobuf_include_path -I ${CMAKE_CURRENT_SOURCE_DIR})
+  list(APPEND _protobuf_include_path -I ${CMAKE_CURRENT_SOURCE_DIR}/configs/proto)
+
 
   # build/project_name/generated_proto/project_name
   set(COMPLIED_PROJ_DIR ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME})
@@ -162,17 +164,28 @@ function(PROTOBUF_GENERATE_CPP SRCS HDRS)
 
     list(APPEND ${SRCS} "${GENERATED_SRC}")
     list(APPEND ${HDRS} "${GENERATED_HDR}")
-    add_custom_command(
-      OUTPUT "${GENERATED_HDR}"
-             "${GENERATED_SRC}"
-      COMMAND "${PROTOBUF_COMPILER}"
-      ARGS --cpp_out=${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
-      COMMAND ${CMAKE_COMMAND} -E copy
-              "${GENERATED_HDR}"
-              "${DEVEL_GENERATED_DIR}/${FIL_WE}.pb.h"
-      DEPENDS ${ABS_FIL} ${PROTOBUF_COMPILER}
-      COMMENT "Running C++ protocol buffer compiler on ${FIL}"
-    VERBATIM )
+    #add_custom_command(
+    #  OUTPUT "${GENERATED_HDR}"
+    #         "${GENERATED_SRC}"
+    #  COMMAND ${PROTOBUF_COMPILER}
+    #  ARGS --cpp_out ${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
+    #  COMMAND ${CMAKE_COMMAND} -E copy
+    #          "${GENERATED_HDR}"
+    #          "${DEVEL_GENERATED_DIR}/${FIL_WE}.pb.h"
+    #  DEPENDS ${ABS_FIL} ${PROTOBUF_COMPILER}
+    #  COMMENT "Running C++ protocol buffer compiler on ${FIL}"
+    # VERBATIM )
+    execute_process(
+      COMMAND ${PROTOBUF_COMPILER} --cpp_out=${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
+    )
+    execute_process(
+      # fix the bug of calling protoc from cmake, will mess with the cc file, fix it with
+      COMMAND sed -i "s/proto_2f//g" "${GENERATED_SRC}"
+    )
+    execute_process(
+      # install generated headers to devel/include/project_name
+      COMMAND cp ${GENERATED_HDR} ${DEVEL_GENERATED_DIR}/${FIL_WE}.pb.h
+    )
   endforeach()
   set_source_files_properties(${${SRCS}} ${${HDRS}} PROPERTIES GENERATED TRUE)
   set(${SRCS} ${${SRCS}} PARENT_SCOPE)
@@ -235,4 +248,3 @@ set(PROTOBUF_GENERATE_CPP_APPEND_PATH true)
 include_directories(${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION})
 
 file(MAKE_DIRECTORY ${CATKIN_DEVEL_PREFIX}/include)
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/proto)
