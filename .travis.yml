@@ -13,10 +13,7 @@ env:
 
 
 before_install:
-  - if [ $INSTALL_ROS == 'true' ]; then
-      docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo ubuntu:16.04 tail -f /dev/null;
-    else
-      docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo ros:latest tail -f /dev/null;
+  - docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo ros:latest tail -f /dev/null;
     fi
 
 ## -e set the environment variable for the bash shell of the container, then we don't need pass in
@@ -40,7 +37,6 @@ before_install:
 
 install:
   - docker exec -t xenial bash -c "sudo apt-get update;
-    apt-get install -y build-essential cmake curl build-essential make gcc g++ sudo wget;
     cd $HOME/port_apollo/scripts/installer && ./install_dependencies.sh"
 
 ## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
