@@ -14,9 +14,9 @@ env:
 
 before_install:
   - if [ $INSTALL_ROS == 'true' ]; then
-      docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/laneletmap_ros ubuntu:16.04 tail -f /dev/null;
+      docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo ubuntu:16.04 tail -f /dev/null;
     else
-      docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/laneletmap_ros ros:latest tail -f /dev/null;
+      docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo ros:latest tail -f /dev/null;
     fi
 
 ## -e set the environment variable for the bash shell of the container, then we don't need pass in
