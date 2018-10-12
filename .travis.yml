@@ -39,6 +39,8 @@ install:
   - docker exec -t xenial bash -c "apt-get -y update;
     apt-get -y install sudo python-pip;
     sudo pip install --upgrade pip;
+    echo ${HOME};
+    cd ${HOME} && ls;
     cd $HOME/port_apollo/scripts/installer && ./install_dependencies.sh"
 
 ## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
