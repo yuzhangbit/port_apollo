@@ -20,10 +20,10 @@
 #include <memory>
 #include <thread>
 
-#include "ros/include/ros/callback_queue.h"
-#include "ros/include/ros/ros.h"
-#include "ros/include/tf2_msgs/TFMessage.h"
-#include "ros/include/tf2_ros/buffer.h"
+#include "ros/callback_queue.h"
+#include "ros/ros.h"
+#include "tf2_msgs/TFMessage.h"
+#include "tf2_ros/buffer.h"
 
 /**
  * @namespace apollo::common

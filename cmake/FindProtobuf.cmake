@@ -163,19 +163,21 @@ function(PROTOBUF_GENERATE_CPP SRCS HDRS)
 
     list(APPEND ${SRCS} "${GENERATED_SRC}")
     list(APPEND ${HDRS} "${GENERATED_HDR}")
-    #add_custom_command(
-    #  OUTPUT "${GENERATED_HDR}"
-    #         "${GENERATED_SRC}"
-    #  COMMAND ${PROTOBUF_COMPILER}
-    #  ARGS --cpp_out ${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
-    #  COMMAND ${CMAKE_COMMAND} -E copy
-    #          "${GENERATED_HDR}"
-    #          "${DEVEL_GENERATED_DIR}/${FIL_WE}.pb.h"
-    #  DEPENDS ${ABS_FIL} ${PROTOBUF_COMPILER}
-    #  COMMENT "Running C++ protocol buffer compiler on ${FIL}"
-    # VERBATIM )
+    #[[
+    add_custom_command(
+      OUTPUT "${GENERATED_HDR}"
+             "${GENERATED_SRC}"
+      COMMAND ${PROTOBUF_COMPILER}
+      ARGS --cpp_out ${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
+      #COMMAND ${CMAKE_COMMAND} -E copy
+      #        "${GENERATED_HDR}"
+      #        "${DEVEL_GENERATED_DIR}/${FIL_WE}.pb.h"
+      DEPENDS ${ABS_FIL} ${PROTOBUF_COMPILER}
+      COMMENT "Running C++ protocol buffer compiler on ${FIL}"
+     VERBATIM )
+     ]]
     execute_process(
-      COMMAND ${PROTOBUF_COMPILER} --cpp_out=${COMPLIED_PROJ_DIR} ${_protobuf_include_path} ${ABS_FIL}
+      COMMAND ${PROTOBUF_COMPILER} --cpp_out=${GENERATED_DIR} ${_protobuf_include_path} ${ABS_FIL}
     )
     execute_process(
       # fix the bug of calling protoc from cmake, will mess with the cc file, fix it with

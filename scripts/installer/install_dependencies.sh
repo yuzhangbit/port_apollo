@@ -9,6 +9,10 @@ main()
   bash ${CURRENT_DIR}/install_protobuf.sh
 }
 
+install_pkgs()
+{
+  sudo apt-get -y install ros-kinetic-tf2
+}
 
 install_sultan()
 {

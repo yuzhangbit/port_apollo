@@ -16,7 +16,11 @@ if(NOT EIGEN3_FOUND)
   set(EIGEN3_INCLUDE_DIR ${EIGEN3_INCLUDE_DIRS})
 endif()
 
-set(PKG_DEPS glog_catkin roscpp)
+set(PKG_DEPS
+  glog_catkin
+  roscpp
+  tf2_msgs
+  tf2_ros)
 find_package(catkin REQUIRED COMPONENTS ${PKG_DEPS})
 find_package(Protobuf REQUIRED)
 
@@ -50,8 +54,10 @@ set(CONFIGS_SRCS
   configs/config_gflags.cc
   configs/vehicle_config_helper.cc)
 
-set(TIME_SRCS
-  time/timer.cc)
+set(FILTER_SRCS
+  filters/digital_filter.cc
+  filters/digital_filter_coefficients.cc
+  filters/mean_filter.cc)
 
 set(MATH_SRCS
   math/sin_table.cc
@@ -81,9 +87,10 @@ set(MATH_SRCS
   math/extended_kalman_filter.h)
 
 set(SOURCES
+  transform_listener/transform_listener.cc
   ${MATH_SRCS}
   ${CONFIGS_SRCS}
-  #${TIME_SRCS}
+  ${FILTER_SRCS}
   )
 
 add_library(${PROJECT_NAME}
@@ -99,7 +106,6 @@ target_include_directories(${PROJECT_NAME}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}>
   )
 
-
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
   ${PROTOBUF_LIBRARIES}
@@ -108,8 +114,13 @@ target_link_libraries(${PROJECT_NAME}
 if (CATKIN_ENABLE_TESTING)
   catkin_add_gtest(${PROJECT_NAME}_tests
     common_tests.cpp
+    # filter tests
+    filters/digital_filter_test.cc
+    filters/digital_filter_coefficients_test.cc
+    filters/mean_filter_test.cc
     # config
     configs/vehicle_config_helper_test.cc
+    status/status_test.cc
     # math related tests
     math/vec2d_test.cc
     math/math_utils_test.cc
