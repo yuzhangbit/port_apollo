@@ -14,7 +14,7 @@ env:
 
 before_install:
   - pwd
-  - apt-get -yqq install tree
+  - sudo apt-get -yqq install tree
   - tree
   - echo "home:${HOME}"
   #- docker run -d --name xenial -v $(pwd):/home/travis/port_apollo osrf/ros:kinetic-desktop-xenial tail -f /dev/null
