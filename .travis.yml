@@ -13,6 +13,8 @@ env:
 
 
 before_install:
+  - pwd
+  - echo "home:${HOME}"
   - docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo osrf/ros:kinetic-desktop-xenial tail -f /dev/null
   - docker cp ${HOME} xenial:${HOME}
 
@@ -40,7 +42,7 @@ install:
     apt-get -y install sudo python-pip;
     sudo pip install --upgrade pip;
     echo HOME:${HOME};
-    cd ${HOME} && ls;
+    cd ${HOME} && ls && tree -L 2;
     cd ${HOME}/port_apollo/scripts/installer;
     source install_dependencies.sh"
 
