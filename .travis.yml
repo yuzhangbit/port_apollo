@@ -42,7 +42,7 @@ install:
     apt-get -y install sudo python-pip tree;
     sudo pip install --upgrade pip;
     echo HOME:${HOME};
-    cd ${HOME} && ls && tree -L 2;
+    cd ${HOME} && ls && tree -L 4;
     cd ${HOME}/port_apollo/scripts/installer;
     source install_dependencies.sh"
 
