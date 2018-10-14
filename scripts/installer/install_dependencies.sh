@@ -6,7 +6,7 @@ UBUNTU_CODENAME=$(lsb_release -sc)
 main()
 {
   install_sultan
-  pwd
+  pwd && ls
   .${CURRENT_DIR}/install_protobuf.sh
 }
 
