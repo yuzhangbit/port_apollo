@@ -39,7 +39,7 @@ before_install:
 
 install:
   - docker exec -t xenial bash -c "apt-get -y update;
-    apt-get -y install sudo python-pip;
+    apt-get -y install sudo python-pip tree;
     sudo pip install --upgrade pip;
     echo HOME:${HOME};
     cd ${HOME} && ls && tree -L 2;
