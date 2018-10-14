@@ -39,7 +39,7 @@ install:
   - docker exec -t xenial bash -c "apt-get -y update;
     apt-get -y install sudo python-pip;
     sudo pip install --upgrade pip;
-    echo "HOME: ${HOME}";
+    echo HOME:${HOME};
     cd ${HOME} && ls;
     cd ${HOME}/scripts/installer && ./install_dependencies.sh"
 
