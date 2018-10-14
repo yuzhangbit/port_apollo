@@ -16,7 +16,7 @@ before_install:
   - pwd
   - echo "home:${HOME}"
   - docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo osrf/ros:kinetic-desktop-xenial tail -f /dev/null
-  - docker cp ${HOME} xenial:${HOME}
+  #- docker cp ${HOME} xenial:${HOME}
 
 ## -e set the environment variable for the bash shell of the container, then we don't need pass in
 ## the ENV variable with docker exec every time.
@@ -43,8 +43,7 @@ install:
     sudo pip install --upgrade pip;
     echo HOME:${HOME};
     cd ${HOME} && ls && tree -L 4;
-    cd ${HOME}/port_apollo/scripts/installer;
-    source install_dependencies.sh"
+    .${HOME}/port_apollo/scripts/installer/install_dependencies.sh"
 
 ## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
 ## -t options allocates a pseudo-TTY for this command(-s) so you can view output or error messages, if any, in Travis CI build log.
