@@ -41,7 +41,7 @@ install:
     sudo pip install --upgrade pip;
     echo HOME:${HOME};
     cd ${HOME} && ls;
-    cd ${HOME}/scripts/installer && ./install_dependencies.sh"
+    cd ${HOME}/port_apollo/scripts/installer && ./install_dependencies.sh"
 
 ## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
 ## -t options allocates a pseudo-TTY for this command(-s) so you can view output or error messages, if any, in Travis CI build log.
