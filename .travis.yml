@@ -14,7 +14,7 @@ env:
 
 before_install:
   - docker run -d --name xenial -e HOME=/home/travis -e TRAVIS=true -e INSTALL_ROS="$INSTALL_ROS" -v $(pwd):/home/travis/port_apollo osrf/ros:kinetic-desktop-xenial tail -f /dev/null
-  - docker cp ${HOME}/port_apollo xenial:${HOME}
+  - docker cp ${HOME} xenial:${HOME}
 
 ## -e set the environment variable for the bash shell of the container, then we don't need pass in
 ## the ENV variable with docker exec every time.
