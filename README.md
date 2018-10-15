@@ -20,7 +20,7 @@ port_apollo
 │   ├── build_pkg.sh  # handy build script for ros workspace
 │   ├── docker_build_image.sh # docker image for CI, you can use it locally as well
 │   ├── docker_compile_pkgs.sh # repo-build script in docker container
-│   ├── Dockerfile   # base docker file to build a image: ubuntu 16.04 + ros kinetics
+│   ├── Dockerfile   # base docker file to build an image: ubuntu 16.04 + ros kinetic
 │   ├── docker_install_dependencies.sh # install dependencies in the docker container
 │   ├── docker_run.sh  # run the docker for the CI test
 │   ├── installer  # dependencies install scripts go here
