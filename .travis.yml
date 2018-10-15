@@ -14,11 +14,8 @@ env:
 
 before_install:
   - pwd
-  - sudo apt-get -yqq install tree
-  - tree
-  - echo "home:${HOME}"
-  #- docker run -d --name xenial -v $(pwd):/home/travis/port_apollo osrf/ros:kinetic-desktop-xenial tail -f /dev/null
-  #- docker cp ${HOME} xenial:${HOME}
+  - ./scripts/docker_build_image.sh
+  - ./scripts/docker_run.sh
 
 ## -e set the environment variable for the bash shell of the container, then we don't need pass in
 ## the ENV variable with docker exec every time.
@@ -40,12 +37,7 @@ before_install:
 ## It is optional and used only for diagnostic purposes.
 
 install:
-  #- docker exec -t xenial bash -c "apt-get -y update;
-  #  apt-get -y install sudo python-pip tree;
-  #  sudo pip install --upgrade pip;
-  #  echo HOME:${HOME};
-  #  cd ${HOME} && ls && tree -L 4;
-  #  /home/travis/port_apollo/scripts/installer/install_dependencies.sh"
+  - ./docker_install_dependencies.sh
 
 ## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
 ## -t options allocates a pseudo-TTY for this command(-s) so you can view output or error messages, if any, in Travis CI build log.
@@ -55,7 +47,7 @@ install:
 ## better readability. Bash commands are separated with a semicolon (;).
 
 script:
-  - docker exec -t xenial bash -c "pwd"
+  - ./docker_compile_pkgs.sh
 
 
 

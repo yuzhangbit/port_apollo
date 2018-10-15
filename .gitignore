@@ -81,3 +81,7 @@ heuristic_info.txt
 # ignore clion project file
 *.idea
 
+# ignore catkin workspace directories and files
+devel/
+logs/
+install/
