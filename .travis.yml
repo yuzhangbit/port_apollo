@@ -8,8 +8,7 @@ language: cpp
 
 env:
   matrix:
-    #- INSTALL_ROS: false   ## use a ros docker image from docker hub
-    - INSTALL_ROS: true    ## use ubuntu docker image from docker hub
+    - INSTALL_ROS: false    ## use ubuntu docker image from docker hub
 
 
 before_install:
