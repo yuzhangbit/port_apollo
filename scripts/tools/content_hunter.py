@@ -25,7 +25,7 @@ class ContentHunter:
 
 
     def substitute(self):
-        # process the packages one by one 
+        # process the packages one by one
         if len(self.cmd_arguments) >= 1:
             for package_name in self.cmd_arguments:
                 self.substituteSinglePackage(package_name)
@@ -37,7 +37,7 @@ class ContentHunter:
 
     def substituteSinglePackage(self, pkg_string_name):
         # define the abs path according the package name
-        search_dir = self.repo_dir + "/" + pkg_string_name
+        search_dir = self.repo_dir + "/src/" + pkg_string_name
         print ("Processing packge:", search_dir)
         self.searchDir(search_dir, pkg_string_name)
 

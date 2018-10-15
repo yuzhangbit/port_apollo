@@ -1,0 +1,54 @@
+sudo: required
+
+services:
+  - docker
+
+# show correct language tag in Travis CI build
+language: cpp
+
+env:
+  matrix:
+    - INSTALL_ROS: false    ## use ubuntu docker image from docker hub
+
+
+before_install:
+  - pwd
+  - ./scripts/docker_build_image.sh
+  - ./scripts/docker_run.sh
+
+## -e set the environment variable for the bash shell of the container, then we don't need pass in
+## the ENV variable with docker exec every time.
+## The default value of $HOME in container is /root. But the $HOME is /home/travis in travis. We have to match them
+## by setting a $HOME variable for a container.
+## http://romanvm.pythonanywhere.com/post/using-docker-travis-continuous-integration-25/
+## docker run:  pulls the necessary image (latest Ubuntu LTS in this case) from Docker repository
+## -d option tells that our image will run in detached or background mode.
+## --name option sets the name of our container ("ubuntu-test")  so we can address it later.
+## -v option maps the current working directory ($(pwd)) into our Docker container under /travis directory
+## /home/travis  also maps to $HOME variable
+## so we can access our build files from within the container.
+## ubuntu:latest is the name of our Docker image that our build container is based on.
+## The problem with docker run command is that our container immediately stops if we do not provide it
+## with any commands, so we need to keep it running somehow. And this is what the command tail -f /dev/null
+## used for — it blocks the shell inside the container and prevents it from stopping, so we can send our commands to it.
+
+## docker ps command prints the list of running containers.
+## It is optional and used only for diagnostic purposes.
+
+install:
+  - ./scripts/docker_install_dependencies.sh
+
+## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
+## -t options allocates a pseudo-TTY for this command(-s) so you can view output or error messages, if any, in Travis CI build log.
+## xenial is the name of a container we send commands to.
+## bash -c means that we will execute the following string in bash shell.
+## YAML allows to span strings enclosed in quotes (") into several lines and I recommend to put each command on a separate line for
+## better readability. Bash commands are separated with a semicolon (;).
+
+script:
+  - ./scripts/docker_compile_pkgs.sh
+
+
+
+notifications:
+    email: false
