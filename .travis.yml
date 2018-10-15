@@ -37,7 +37,7 @@ before_install:
 ## It is optional and used only for diagnostic purposes.
 
 install:
-  - ./docker_install_dependencies.sh
+  - ./scripts/docker_install_dependencies.sh
 
 ## docker exec command allows to execute a command or a series of Linux shell commands inside our container.
 ## -t options allocates a pseudo-TTY for this command(-s) so you can view output or error messages, if any, in Travis CI build log.
@@ -47,7 +47,7 @@ install:
 ## better readability. Bash commands are separated with a semicolon (;).
 
 script:
-  - ./docker_compile_pkgs.sh
+  - ./scripts/docker_compile_pkgs.sh
 
 
 
