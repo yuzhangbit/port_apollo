@@ -7,7 +7,7 @@ main(){
     cd ${REPO_DIR}
     catkin build
     catkin build --make-args tests
-    ./devel/lib/common/common_test
+    ./devel/lib/common/common_tests
 }
 
 main
