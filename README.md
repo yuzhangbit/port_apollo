@@ -3,6 +3,8 @@
 * OS: ubuntu 16.04 LTS
 * ROS: Kinetic
 
+Please see [Using Apollo Algorithms in Your Normal ROS Package](https://yuzhangbit.github.io/tools/porting-apollo/) for details.
+
 ## Dependencies
 * ros-kinetic-desktop
 * protobuf >= 3.3.0 (according to [the docker installing script](https://github.com/ApolloAuto/apollo/blob/master/docker/build/installers/install_protobuf.sh))  
@@ -29,7 +31,7 @@ port_apollo
     ├── catkin_simple  # dependencies, ros package
     ├── glog_catkin  # dependencies, ros package
     ├── cmake  # cmake module folder to hold FindProtobuf.cmake
-    ├── common  # apollo module, ros package 
+    ├── common  # apollo module, ros package
     ├── planning # apollo module, to be done
     ...
     └── other_module_name # apollo module, to be done
