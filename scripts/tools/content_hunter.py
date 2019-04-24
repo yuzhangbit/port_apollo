@@ -30,7 +30,7 @@ class ContentHunter:
             for package_name in self.cmd_arguments:
                 self.substituteSinglePackage(package_name)
         else:
-            print "Please provide at least one name of packages to process"
+            print ("Please provide at least one name of packages to process")
 
     def getFileExtention(self, file_name):
         return splitext(file_name)[1]
