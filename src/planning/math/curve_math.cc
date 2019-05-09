@@ -18,7 +18,7 @@
  * @file curve_math.cc
  **/
 
-#include "math/curve_math.h"
+#include "curve_math.h"
 
 #include <cmath>
 

@@ -26,8 +26,8 @@
 #include <cmath>
 #include <vector>
 
-#include "common/proto/pnc_point.pb.h"
-#include "common/status/status.h"
+#include <common/proto/pnc_point.pb.h>
+#include <common/status/status.h>
 #include "planning/proto/spiral_curve_config.pb.h"
 
 namespace apollo {

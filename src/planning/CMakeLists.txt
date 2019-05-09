@@ -26,8 +26,11 @@ set(PROTOS
 
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ${PROTOS})
 
+
+
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ${common_INCLUDE_DIRS}
   ${PROTOBUF_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
 )
@@ -38,7 +41,7 @@ catkin_package(
       ${CATKIN_DEVEL_PREFIX}/include
       ${CMAKE_CURRENT_SOURCE_DIR}
       ./
-  LIBRARIES
+  LIBRARIES planning
   CATKIN_DEPENDS ${PKG_DEPS}
 )
 

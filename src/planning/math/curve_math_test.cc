@@ -17,7 +17,7 @@
 /**
  * @file curvature_math_test.cc
  **/
-#include "math/curve_math.h"
+#include "planning/math/curve_math.h"
 
 #include <cmath>
 
